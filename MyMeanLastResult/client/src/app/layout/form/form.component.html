@@ -1,0 +1,17 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Add School'" [icon]="'fa-edit'"></app-page-header>
+    <div class="row">
+        <div class="col-lg-12">
+            <form (ngSubmit)="addSchool()">
+                <fieldset class="form-group">
+                    <label>School Name</label>
+                    <input type="text" [(ngModel)]="school_name" name="school_name" class="form-control">
+
+      <!-- Example 1: <input [(ngModel)]="person.firstName" name="first">
+      Example 2: <input [(ngModel)]="person.firstName" [ngModelOptions]="{standalone: true}"> -->
+                </fieldset>
+                <input type="submit" class="btn btn-success" value="Add">
+            </form>
+        </div>
+    </div>
+</div>

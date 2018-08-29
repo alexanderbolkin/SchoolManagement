@@ -1,0 +1,47 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">School Data Table</div>
+                <div class="card-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <th>No</th>
+                            <th>SchoolName</th>
+                            <th>Year</th>
+                            <th>Week</th>
+                            <th>Month</th>
+                            <th>Electricity, €</th>
+                            <th>Electricity, kWh</th>
+                            <th>Heating,€</th>
+                            <th>Heating ,kWh</th>
+                            <th>Water, €</th>
+                            <th>Water, litres</th>
+                            <th style="margin-left:20px !important;">action</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of datas" class="table-active">
+                                <th scope="row">{{data._id}}</th>
+                                <td>{{data.school_id}}</td>
+                                <td>{{data.year}}</td>
+                                <td>{{data.week}}</td>
+                                <td>{{data.month}}</td>
+                                <td>{{data.elect_eur}}</td>
+                                <td>{{data.elect_kwh}}</td>
+                                <td>{{data.heating_eur}}</td>
+                                <td>{{data.heating_kwh}}</td>
+                                <td>{{data.water_eur}}</td>
+                                <td>{{data.water_litre}}</td>
+                                <td>
+                                    <a routerLink="/tables/edit/{{data._id}}" [routerLinkActive]="['router-link-active']" class="btn btn-primary">Edit</a>
+                                    <input type="button" (click)="deleteData(data._id)" value="Delete" class="btn btn-danger">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

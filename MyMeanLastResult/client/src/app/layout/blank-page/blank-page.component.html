@@ -1,0 +1,36 @@
+<!-- <div [@routerTransition]> -->
+    <app-page-header [heading]="'UserList'" [icon]="'fa-table'"></app-page-header>
+    <div class="row mb-5">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mt-7">
+                <div class="card-header">Userlist</div>
+                <table class="card-body table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <!-- <th>Photo</th> -->
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th style="margin-left:30px !important;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let user of users" class="table-active">
+                        <th scope="row">1</th>
+                        <!-- <td>photo</td> -->
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.password}}</td>
+                        <td>
+                            <!-- <input type="button" (click)="editUser(user._id)" value="Edit" class="btn btn-success"> -->
+                            <a routerLink="/blank-page/edit/{{user._id}}" [routerLinkActive]="['router-link-active']" class="btn btn-primary">Edit</a>
+                            <input type="button" (click)="deleleteUser(user._id)" value="Delete" class="btn btn-danger">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->

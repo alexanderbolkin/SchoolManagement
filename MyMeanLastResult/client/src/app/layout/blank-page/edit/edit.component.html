@@ -1,0 +1,39 @@
+<!-- <div class="login-page" [@routerTransition]> -->
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <img src="assets/images/logo.png" width="150px" class="user-avatar" style="margin-left:300px;margin-top:50px;"/>
+                    <app-page-header [heading]="'User Edit'" [icon]="'fa-wrench'"></app-page-header>
+                    <div class="card">
+                        <div class="card-body">
+                        
+                            <form [formGroup]="angForm"  novalidate>
+                                <div class="form-group">
+                                    <label class="col-md-4" style="float:left !important;">UserName</label>
+                                    <input type="text" class="form-control" id="username" name="username" formControlName="username" #username />
+                                </div>
+
+                                <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)" class="alert alert-danger">
+                                    <div *ngIf="angForm.controls['username'].errors.required"> UserName is required.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4">Email</label>
+                                    <input type="text" class="form-control" id="email" name="email" formControlName="email" #email/>
+                                </div>
+
+                                <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+                                    <div *ngIf="angForm.controls['email'].errors.required">Email is required.</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- <button (click)="updateUser(username.value, email.value)" [disabled]="angForm.invalid" class="btn btn-primary">Update</button> -->
+                                    <button (click)="updateUser(username.value, email.value)"  class="btn btn-primary">Update</button>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- </div> -->
+
+

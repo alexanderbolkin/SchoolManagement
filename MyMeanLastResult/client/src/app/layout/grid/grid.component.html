@@ -1,0 +1,161 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Save New Data'" [icon]="'fa-wrench'"></app-page-header>
+
+    <form role="form" (ngSubmit)="SaveSchoolData()">
+        <div></div>
+        <div class="row" style="margin-top:1rem !important;">
+            <div class="col-xl-12 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Select School</label>
+                            <select  class="form-control" [(ngModel)]="school_id" name="school_id">
+                                <option value="0" selected disabled>Select school</option>
+                                <option value="1">Alomdon</option>
+                                <option value="2">polmolkonda</option>
+                                <option value="3">portret</option>
+                                <option value="4">mklng</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-4 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="InputText">Year</label>
+                            
+                            <select  class="form-control" [(ngModel)]="year" name="year">
+                                <option value="" selected></option>
+                                <option value="2001">2001</option>
+                                <option value="2002">2002</option>
+                                <option value="2003">2003</option>
+                                <option value="2004">2004</option>
+                                <option value="2005">2005</option>
+                                <option value="2006">2006</option>
+                                <option value="2007">2007</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="InputText">Week</label>
+                            
+                            <select class="form-control" [(ngModel)]="week" name="week">
+                                    <option value="" selected></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                <!-- @foreach($weeks as $week)
+                                    @if($week == date('W'))
+                                        <option value="{{$week}}" selected>{{$week}}</option>
+                                    @else
+                                        <option value="{{$week}}">{{$week}}</option>
+                                    @endif
+                                @endforeach -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="InputText">Month</label>
+                            <select class="form-control" [(ngModel)]="month" name="month">
+
+                                    <option value="" selected></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                            <!-- *ngFor
+                                *ngIf($month == date('F'))
+                                    <option value="{{$key}}" selected>{{$month}}</option>
+                                @else
+                                    <option value="{{$key}}">{{$month}}</option>
+                                @endif
+                            @endforeach -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="row">
+            <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <input type="text" [(ngModel)]="elect_eur"  name="elect_eur"
+                            value="" class="form-control" placeholder="ElectricityEuro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <input type="text" [(ngModel)]="elect_kwh" name="elect_kwh"
+                            value="" class="form-control" placeholder="Electricity_kwh">
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="row">
+            <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <input type="text" [(ngModel)]="heating_eur" name="heating_eur"
+                            value="" class="form-control" placeholder="HeatingEuro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <input type="text" [(ngModel)]="heating_kwh" name="heating_kwh"
+                            value="" class="form-control" placeholder="HeatingWater">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <input type="text"  [(ngModel)]="water_eur" name="water_eur"
+                            value="" class="form-control" placeholder="WaterEuro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 text-xs-center">
+                <div class="card mb-3">
+                    <div class="card-body">
+                            <input type="text" [(ngModel)]="water_litre" name="water_litre"
+                            value="" class="form-control" placeholder= "WaterLitre">
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <input type="submit" class="btn btn-success" value="Save">
+    </form>
+</div>

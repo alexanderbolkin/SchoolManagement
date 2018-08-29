@@ -1,0 +1,68 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="SendData" [icon]="'fa-wrench'"></app-page-header>
+        <form role="form">
+            <div class="row">
+                <div class="col-xl-12 text-xs-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Select School</label>
+                                <select class="form-control">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+    
+            <div class="row">
+                <div class="col-xl-6 text-xs-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="InputText">Year</label>
+                                
+                                <select class="form-control" name="year" required>
+                                    <option value="0" selected disabled>Select school</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 text-xs-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="InputText">Month</label>
+                                
+                                <select class="form-control" name="month" required>
+                                    <option value="0" selected disabled>Select Month</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-8 text-xs-center">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="InputText">Email</label>
+                                <input type="" class="form-control" name="email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <input type="submit" class="btn btn-success" value="Save">
+        </form>
+    </div>
+    
